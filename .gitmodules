@@ -1,0 +1,3 @@
+[submodule "FRCMake"]
+	path = FRCMake
+	url = https://github.com/FRC-8193/FRCMake
