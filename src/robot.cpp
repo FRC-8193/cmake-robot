@@ -4,16 +4,46 @@
 class Robot : public frc::TimedRobot {
 public:
 	Robot() {
-		std::cout << "Initializing..." << std::endl;
+		std::cout << "Robot Start!" << std::endl;
+	}
+
+	void RobotPeriodic() {
+	}
+
+	void AutonomousInit() {
+		std::cout << "Autonomous Start!" << std::endl;
+	}
+
+	void AutonomousPeriodic() {
 	}
 
 	void TeleopInit() {
-		std::cout << "Teleop start!" << std::endl;
+		std::cout << "Teleop Start!" << std::endl;
+	}
+
+	void TeleopPeriodic() {
+	}
+
+	void DisabledInit() {
+		std::cout << "Disabled Start!" << std::endl;
+	}
+
+	void DisabledPeriodic() {
+	}
+
+	void TestInit() {
+	}
+
+	void TestPeriodic() {
+	}
+
+	void SimulationInit() {
+	}
+
+	void SimulationPeriodic() {
 	}
 };
 
 int main() {
-	frc::StartRobot<Robot>();
-
-	return 0;
+	return frc::StartRobot<Robot>();
 }
