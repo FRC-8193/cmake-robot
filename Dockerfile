@@ -7,10 +7,12 @@ WORKDIR /workspace
 COPY ./FRCMake/ /workspace/FRCMake
 COPY ./CMakeLists.txt /workspace/CMakeLists.txt
 
-RUN cmake -B build . -DBUILD_ROBOT_PROGRAM=OFF && cmake --build build -j 16
+ARG FRC_TEAM_NUMBER=8193
+
+RUN cmake -B build . -DBUILD_ROBOT_PROGRAM=OFF -DFRC_TEAM_NUMBER=${FRC_TEAM_NUMBER} && cmake --build build -j 16
 
 WORKDIR /workspace
 
 COPY ./src /workspace/src
 
-RUN cmake -B build . -DBUILD_ROBOT_PROGRAM=ON && cmake --build build --target deploy_cmake_robot
+RUN cmake -B build . -DBUILD_ROBOT_PROGRAM=ON -DFRC_TEAM_NUMBER=${FRC_TEAM_NUMBER} && cmake --build build --target deploy_cmake_robot
